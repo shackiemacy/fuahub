@@ -5,33 +5,283 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Fua Hub</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<style>
-body {
-    background-image:url(mop.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-</style>
-
 <body>
-    <header>
-        <h1>Fua Hub</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="account.html">Account</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="services.html">Services</a>
-            <a href="signup.html">Sign Up</a>
-        </nav>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home"></i> Fua Hub
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="account.html" class="nav-link">Account</a></li>
+                    <li><a href="login.html" class="btn btn-outline btn-sm">Login</a></li>
+                    <li><a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a></li>
+                </ul>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <h2>About Us</h2>
-        <p>Fua Hub was founded with a mission to simplify your life by revolutionizing laundry services.
-        </p>
-    </main>
+    <!-- Hero Section -->
+    <section style="background: var(--gradient-primary); color: white; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h1 style="color: white; margin-bottom: 1rem;">About Fua Hub</h1>
+            <p style="color: white; opacity: 0.9; font-size: 1.25rem; max-width: 600px; margin: 0 auto;">
+                Revolutionizing household services by connecting trusted professionals with busy homeowners across Kenya.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="container mt-4">
+        <div class="row">
+            <div class="col-6">
+                <h2>Our Mission</h2>
+                <p style="font-size: 1.125rem; line-height: 1.8;">
+                    Fua Hub was founded with a mission to simplify your life by revolutionizing household services. 
+                    We believe everyone deserves a clean, comfortable home without the stress of managing household chores.
+                </p>
+                <p>
+                    Our platform connects busy individuals and families with trusted, professional service providers 
+                    who deliver quality household services right to your doorstep. From laundry and cleaning to 
+                    cooking and maintenance, we make it easy to get help when you need it.
+                </p>
+                
+                <div class="mt-3">
+                    <a href="services.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i> Explore Our Services
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-6">
+                <div class="card" style="background: var(--light-gray); text-align: center; padding: 2rem;">
+                    <div style="background: var(--gradient-primary); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-heart" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3>Built with Care</h3>
+                    <p>Every service on our platform is delivered with attention to detail and genuine care for your home and family.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="container mt-4">
+        <div class="text-center mb-4">
+            <h2>Our Core Values</h2>
+            <p>The principles that guide everything we do</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-4">
+                <div class="card text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Trust & Safety</h3>
+                        <p>All our service providers are thoroughly vetted, background-checked, and verified to ensure your safety and peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Quality Excellence</h3>
+                        <p>We maintain high standards for all services and continuously monitor feedback to ensure exceptional quality.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Fair Partnership</h3>
+                        <p>We believe in fair compensation for service providers and transparent pricing for customers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section style="background: var(--light-gray); padding: 3rem 0; margin-top: 3rem;">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div style="background: var(--gradient-primary); padding: 2rem; border-radius: var(--radius-lg); color: white; height: 100%;">
+                        <h3 style="color: white; margin-bottom: 1.5rem;">Our Story</h3>
+                        <p style="color: white; opacity: 0.9; line-height: 1.8;">
+                            Founded in 2024 by a team of entrepreneurs who understood the daily struggle of balancing 
+                            work and household responsibilities, Fua Hub emerged from a simple idea: what if getting 
+                            help with household tasks was as easy as ordering food online?
+                        </p>
+                        <p style="color: white; opacity: 0.9;">
+                            Starting in Nairobi, we've grown to serve thousands of families across Kenya, connecting 
+                            them with skilled professionals who take pride in their work.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <h3>Why Choose Fua Hub?</h3>
+                    
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+                        <div style="background: rgba(255, 107, 53, 0.1); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                            <i class="fas fa-clock" style="color: var(--primary-color);"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Time-Saving Convenience</h4>
+                            <p style="color: var(--gray);">Book services in minutes and get more time for what matters most to you.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+                        <div style="background: rgba(255, 107, 53, 0.1); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                            <i class="fas fa-money-bill-wave" style="color: var(--primary-color);"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Transparent Pricing</h4>
+                            <p style="color: var(--gray);">No hidden fees or surprise charges. You know exactly what you're paying for.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+                        <div style="background: rgba(255, 107, 53, 0.1); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                            <i class="fas fa-users" style="color: var(--primary-color);"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Trusted Community</h4>
+                            <p style="color: var(--gray);">Join thousands of satisfied customers and skilled service providers in our growing community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="container mt-4">
+        <div class="text-center mb-4">
+            <h2>Our Impact</h2>
+            <p>Numbers that show our commitment to excellence</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-3">
+                <div class="card text-center" style="background: var(--gradient-primary); color: white;">
+                    <div class="card-body">
+                        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 0.5rem;">1000+</h2>
+                        <p style="color: white; opacity: 0.9;">Happy Customers</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-3">
+                <div class="card text-center" style="background: var(--secondary-color); color: white;">
+                    <div class="card-body">
+                        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 0.5rem;">150+</h2>
+                        <p style="color: white; opacity: 0.9;">Verified Providers</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-3">
+                <div class="card text-center" style="background: var(--success-color); color: white;">
+                    <div class="card-body">
+                        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 0.5rem;">5000+</h2>
+                        <p style="color: white; opacity: 0.9;">Services Completed</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-3">
+                <div class="card text-center" style="background: var(--accent-color); color: white;">
+                    <div class="card-body">
+                        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 0.5rem;">4.8/5</h2>
+                        <p style="color: white; opacity: 0.9;">Average Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="container mt-4 text-center">
+        <div class="card" style="background: var(--gradient-primary); color: white;">
+            <div class="card-body">
+                <h2 style="color: white;">Ready to Experience the Difference?</h2>
+                <p style="color: white; opacity: 0.9;">Join thousands of satisfied customers and discover how easy household services can be.</p>
+                <div class="mt-3">
+                    <a href="signup.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-rocket"></i> Get Started Today
+                    </a>
+                    <a href="contact.html" class="btn btn-outline btn-lg" style="margin-left: 1rem; border-color: white; color: white;">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-home"></i> Fua Hub</h3>
+                    <p>Your trusted partner for professional housework services. We connect you with verified service providers in your area.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="services.html">Our Services</a></p>
+                    <p><a href="contact.html">Contact Us</a></p>
+                    <p><a href="account.html">My Account</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="services.html">Laundry & Ironing</a></p>
+                    <p><a href="services.html">House Cleaning</a></p>
+                    <p><a href="services.html">Cooking</a></p>
+                    <p><a href="services.html">Dishwashing</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +254 704 566 421</p>
+                    <p><i class="fas fa-envelope"></i> info@fuahub.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fua Hub. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

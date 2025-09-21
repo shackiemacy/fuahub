@@ -3,119 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fua Hub</title>
+    <title>Fua Hub - Professional Housework Services</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    }
-
-header {
-    background-color: orange;
-    color: black;
-    padding: 5px 10px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-nav {
-    background-color: #333;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-}
-nav ul li a {
-    color: floralwhite;
-    padding: 14px 20px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-nav ul li a:hover {
-    background-color: #111;
-}
-
-.user-profile {
-    text-align: right;
-    justify-content: space-between;
-    display: inline-flex;
-}
-
-main {
-    background-image: url(iron.webp) ;
-    padding: 150px;
-}
-</style>
-    </style>
 <body>
-    <header>
-        <h1>Fua Hub</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="account.html">Account</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="services.html">Services</a>
-            <a href="signup.html">Sign Up</a>
-        </nav>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home"></i> Fua Hub
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="account.html" class="nav-link">Account</a></li>
+                    <li><a href="login.html" class="btn btn-outline btn-sm">Login</a></li>
+                    <li><a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a></li>
+                </ul>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>Welcome to Fua Hub</h2>
-            <p>Say goodbye to laundry stress with Fua Hub! We bring eco-friendly, professional laundry services right to your doorstep.</p>
-            <ul>
-                <li>Good services</li>
-                <li>Eco-Friendly Solutions</li>
-                <li>Affordable & Reliable Service</li>
-            </ul>
-            <p>Ready for hassle-free laundry? Choose us today!</p>
-        </section>
-    </main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Housework Services at Your Doorstep</h1>
+                <p>Say goodbye to laundry stress with Fua Hub! We connect you with trusted service providers for all your household needs.</p>
+                
+                <ul class="hero-features">
+                    <li><i class="fas fa-star"></i> Premium Quality Services</li>
+                    <li><i class="fas fa-leaf"></i> Eco-Friendly Solutions</li>
+                    <li><i class="fas fa-dollar-sign"></i> Affordable & Reliable</li>
+                </ul>
+                
+                <div class="mt-4">
+                    <a href="services.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-search"></i> Find Services
+                    </a>
+                    <a href="signup.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-user-plus"></i> Join as Provider
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Features Section -->
+    <section class="container mt-4">
+        <div class="text-center mb-4">
+            <h2>Why Choose Fua Hub?</h2>
+            <p>We make it easy to get help with your household tasks</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-4">
+                <div class="card text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Trusted Providers</h3>
+                        <p>All our service providers are verified and background-checked for your safety and peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Quick & Convenient</h3>
+                        <p>Book services in minutes and get them completed at your preferred time and location.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Fair Pricing</h3>
+                        <p>Transparent pricing with no hidden fees. Pay only for the services you receive.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Services Preview -->
+    <section class="container mt-4">
+        <div class="text-center mb-4">
+            <h2>Our Popular Services</h2>
+            <p>From laundry to cleaning, we've got you covered</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="card">
+                    <div class="service-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Laundry & Ironing</h3>
+                        <p>Professional washing, drying, and ironing services for your clothes.</p>
+                        <div class="service-price">Starting from KSh 250</div>
+                        <a href="services.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="card">
+                    <div class="service-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">House Cleaning</h3>
+                        <p>Complete house cleaning including vacuuming, mopping, and organizing.</p>
+                        <div class="service-price">Starting from KSh 200</div>
+                        <a href="services.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Cooking & Dishes</h3>
+                        <p>Meal preparation and dishwashing services for busy households.</p>
+                        <div class="service-price">Starting from KSh 350</div>
+                        <a href="services.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="container mt-4 text-center">
+        <div class="card" style="background: var(--gradient-primary); color: white;">
+            <div class="card-body">
+                <h2 style="color: white;">Ready to Get Started?</h2>
+                <p style="color: white; opacity: 0.9;">Join thousands of satisfied customers who trust Fua Hub for their household needs.</p>
+                <div class="mt-3">
+                    <a href="signup.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-rocket"></i> Get Started Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-home"></i> Fua Hub</h3>
+                    <p>Your trusted partner for professional housework services. We connect you with verified service providers in your area.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="services.html">Our Services</a></p>
+                    <p><a href="contact.html">Contact Us</a></p>
+                    <p><a href="account.html">My Account</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="services.html">Laundry & Ironing</a></p>
+                    <p><a href="services.html">House Cleaning</a></p>
+                    <p><a href="services.html">Cooking</a></p>
+                    <p><a href="services.html">Dishwashing</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +254 704 566 421</p>
+                    <p><i class="fas fa-envelope"></i> info@fuahub.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fua Hub. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
     <!-- Sign Up Modal -->
     <div id="signupModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Sign Up</h3>
-            <p>Are you signing up as:</p>
-            <button id="clientBtn">Client</button>
-            <button id="providerBtn">Service Provider</button>
-            <form id="signupForm">
-                <label>Email:</label>
-                <input type="email" required>
-                <label>Username:</label>
-                <input type="text" required>
-                <label>Password:</label>
-                <input type="password" required>
-                <button type="submit">Sign Up</button>
-            </form>
+            <button class="modal-close" id="signupClose">&times;</button>
+            <h3>Choose Your Role</h3>
+            <p>Are you looking for services or want to provide services?</p>
+            <div class="mt-3">
+                <button id="clientBtn" class="btn btn-primary btn-lg" style="margin-right: 1rem;">
+                    <i class="fas fa-user"></i> I Need Services
+                </button>
+                <button id="providerBtn" class="btn btn-secondary btn-lg">
+                    <i class="fas fa-briefcase"></i> I Provide Services
+                </button>
+            </div>
         </div>
     </div>
 
     <!-- Login Modal -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Login</h3>
+            <button class="modal-close" id="loginClose">&times;</button>
+            <h3>Login to Your Account</h3>
             <form id="loginForm">
-                <label>Email:</label>
-                <input type="email" required>
-                <label>Password:</label>
-                <input type="password" required>
-                <button type="submit">Login</button>
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
             </form>
+            <p class="mt-2 text-center">
+                Don't have an account? <a href="signup.html">Sign up here</a>
+            </p>
         </div>
     </div>
 

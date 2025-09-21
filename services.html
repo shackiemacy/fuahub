@@ -3,64 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Fua Hub</title>
+    <title>Our Services - Fua Hub</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Services Offered</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="account.html">Account</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-            </ul>
-        </nav>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home"></i> Fua Hub
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="account.html" class="nav-link">Account</a></li>
+                    <li><a href="login.html" class="btn btn-outline btn-sm">Login</a></li>
+                    <li><a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a></li>
+                </ul>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <section id="services-section">
-        <h2>Select and Calculate Services</h2>
-
-        <form id="services-form">
-            <label for="service">Choose a Service:</label>
-            <select id="service" name="service" required>
-                <option value="" disabled selected>Select a service</option>
-                <option value="vacuum-cleaning">Vacuum Cleaning</option>
-                <option value="ironing">Ironing</option>
-                <option value="washing-clothes">Washing Clothes</option>
-                <option value="washing-dishes">Washing Dishes</option>
-                <option value="mopping">Mopping</option>
-                <option value="cooking">Cooking</option>
-            </select>
-
-            <div id="quantity-section" style="display: none;">
-                <label for="quantity">Enter Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" placeholder="Quantity" required>
-            </div>
-
-            <div id="price-section" style="display: none;">
-                <p>Price Per Item: <span id="price-per-item">Ksh. 0</span></p>
-                <p>Total Price: <span id="total-price">Ksh. 0</span></p>
-            </div>
-
-            <button type="button" id="calculate-btn" style="display: none;">Calculate</button>
-            <button type="submit" id="submit-btn" style="display: none;">Submit</button>
-        </form>
+    <!-- Page Header -->
+    <section style="background: var(--gradient-primary); color: white; padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <h1 style="color: white; margin-bottom: 1rem;">Our Professional Services</h1>
+            <p style="color: white; opacity: 0.9; font-size: 1.25rem;">Choose from our wide range of household services</p>
+        </div>
     </section>
+
+    <!-- Services Calculator -->
+    <section class="container mt-4">
+        <div class="card">
+            <div class="card-header text-center">
+                <h2 class="card-title">Service Calculator</h2>
+                <p class="card-subtitle">Select a service and calculate the cost</p>
+            </div>
+            
+            <div class="card-body">
+                <form id="services-form">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="service" class="form-label">Choose a Service</label>
+                                <select id="service" name="service" class="form-control form-select" required>
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="vacuum-cleaning">Vacuum Cleaning</option>
+                                    <option value="ironing">Ironing</option>
+                                    <option value="washing-clothes">Washing Clothes</option>
+                                    <option value="washing-dishes">Washing Dishes</option>
+                                    <option value="mopping">Mopping</option>
+                                    <option value="cooking">Cooking</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-6">
+                            <div id="quantity-section" class="form-group hidden">
+                                <label for="quantity" class="form-label">Enter Quantity</label>
+                                <input type="number" id="quantity" name="quantity" class="form-control" min="1" placeholder="Quantity" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="price-section" class="hidden">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="card" style="background: var(--light-gray);">
+                                    <div class="card-body text-center">
+                                        <h4>Price Per Item</h4>
+                                        <div class="service-price" id="price-per-item">KSh 0</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card" style="background: var(--gradient-primary); color: white;">
+                                    <div class="card-body text-center">
+                                        <h4 style="color: white;">Total Price</h4>
+                                        <div class="service-price" id="total-price" style="color: white;">KSh 0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <button type="button" id="calculate-btn" class="btn btn-secondary btn-lg hidden">
+                            <i class="fas fa-calculator"></i> Calculate Price
+                        </button>
+                        <button type="submit" id="submit-btn" class="btn btn-primary btn-lg hidden">
+                            <i class="fas fa-shopping-cart"></i> Book Service
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="container mt-4">
+        <div class="text-center mb-4">
+            <h2>All Services</h2>
+            <p>Browse our complete range of professional household services</p>
+        </div>
+        
+        <div class="services-grid">
+            <!-- Vacuum Cleaning Service -->
+            <div class="service-card">
+                <div class="card">
+                    <div class="service-icon">
+                        <i class="fas fa-vacuum"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Vacuum Cleaning</h3>
+                        <p>Professional vacuum cleaning for carpets, rugs, and upholstery. Our trained staff use high-quality equipment to ensure thorough cleaning.</p>
+                        <div class="service-price">Starting from KSh 200</div>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Single room: KSh 200</li>
+                            <li>Bedsitter: KSh 300</li>
+                            <li>1 bedroom: KSh 500</li>
+                            <li>Additional rooms: KSh 500 each</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectService('vacuum-cleaning')">
+                            <i class="fas fa-play"></i> Select Service
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ironing Service -->
+            <div class="service-card">
+                <div class="card">
+                    <div class="service-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Ironing</h3>
+                        <p>Professional ironing service for all types of clothing. We handle delicate fabrics with care and ensure crisp, wrinkle-free results.</p>
+                        <div class="service-price">KSh 10 per item</div>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Shirts & Blouses: KSh 10</li>
+                            <li>Trousers & Skirts: KSh 10</li>
+                            <li>Dresses: KSh 15</li>
+                            <li>Suits: KSh 25</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectService('ironing')">
+                            <i class="fas fa-play"></i> Select Service
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Washing Clothes Service -->
+            <div class="service-card">
+                <div class="card">
+                    <div class="service-icon">
+                        <i class="fas fa-soap"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Washing Clothes</h3>
+                        <p>Complete laundry service including washing, rinsing, and drying. Choose between handwash and machine wash options.</p>
+                        <div class="service-price">Starting from KSh 250</div>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Handwashing: KSh 500/basket</li>
+                            <li>Machine wash: KSh 250/basket</li>
+                            <li>Delicate items: KSh 750/basket</li>
+                            <li>Express service: +50%</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectService('washing-clothes')">
+                            <i class="fas fa-play"></i> Select Service
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Washing Dishes Service -->
+            <div class="service-card">
+                <div class="card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Washing Dishes</h3>
+                        <p>Professional dishwashing service for your kitchen. We clean all types of dishes, pots, pans, and kitchen utensils thoroughly.</p>
+                        <div class="service-price">KSh 250 per session</div>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Regular load: KSh 250</li>
+                            <li>Heavy load: KSh 350</li>
+                            <li>Delicate items: KSh 300</li>
+                            <li>Pots & pans: KSh 400</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectService('washing-dishes')">
+                            <i class="fas fa-play"></i> Select Service
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mopping Service -->
+            <div class="service-card">
+                <div class="card">
+                    <div class="service-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Mopping</h3>
+                        <p>Professional floor cleaning and mopping service. We use eco-friendly cleaning products suitable for all floor types.</p>
+                        <div class="service-price">Starting from KSh 70</div>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Single room: KSh 70</li>
+                            <li>Bedsitter: KSh 150</li>
+                            <li>1 bedroom: KSh 200</li>
+                            <li>Full house: Quote on request</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectService('mopping')">
+                            <i class="fas fa-play"></i> Select Service
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cooking Service -->
+            <div class="service-card">
+                <div class="card">
+                    <div class="service-icon">
+                        <i class="fas fa-chef-hat"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Cooking</h3>
+                        <p>Professional cooking service for your meals. Our experienced cooks can prepare various cuisines according to your preferences.</p>
+                        <div class="service-price">KSh 350 per session</div>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Simple meal: KSh 350</li>
+                            <li>Complex meal: KSh 500</li>
+                            <li>Party catering: Quote on request</li>
+                            <li>Special dietary needs: +20%</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectService('cooking')">
+                            <i class="fas fa-play"></i> Select Service
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="container mt-4 text-center">
+        <div class="card" style="background: var(--gradient-primary); color: white;">
+            <div class="card-body">
+                <h2 style="color: white;">Need a Custom Service?</h2>
+                <p style="color: white; opacity: 0.9;">Can't find what you're looking for? Contact us for custom service packages.</p>
+                <div class="mt-3">
+                    <a href="contact.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-home"></i> Fua Hub</h3>
+                    <p>Your trusted partner for professional housework services. We connect you with verified service providers in your area.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="services.html">Our Services</a></p>
+                    <p><a href="contact.html">Contact Us</a></p>
+                    <p><a href="account.html">My Account</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="#vacuum-cleaning">Vacuum Cleaning</a></p>
+                    <p><a href="#ironing">Ironing</a></p>
+                    <p><a href="#washing">Washing</a></p>
+                    <p><a href="#cooking">Cooking</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +254 704 566 421</p>
+                    <p><i class="fas fa-envelope"></i> info@fuahub.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fua Hub. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Service prices
         const prices = {
-            "vacuum-cleaning": 200, // Base price for single room
-            "ironing": 10,         // Per item
-            "washing-clothes": 500, // Per laundry basket (handwash)
-            "washing-dishes": 250, // Per session
-            "mopping": 70,         // Single room
-            "cooking": 350         // Per session
+            "vacuum-cleaning": 200,
+            "ironing": 10,
+            "washing-clothes": 500,
+            "washing-dishes": 250,
+            "mopping": 70,
+            "cooking": 350
         };
 
         const serviceDropdown = document.getElementById('service');
@@ -75,16 +334,16 @@
             const selectedService = serviceDropdown.value;
 
             if (selectedService) {
-                quantitySection.style.display = 'block';
-                priceSection.style.display = 'block';
-                calculateBtn.style.display = 'inline-block';
-                submitBtn.style.display = 'inline-block';
-                pricePerItemElement.textContent = `Ksh. ${prices[selectedService]}`;
+                quantitySection.classList.remove('hidden');
+                priceSection.classList.remove('hidden');
+                calculateBtn.classList.remove('hidden');
+                submitBtn.classList.remove('hidden');
+                pricePerItemElement.textContent = `KSh ${prices[selectedService]}`;
             } else {
-                quantitySection.style.display = 'none';
-                priceSection.style.display = 'none';
-                calculateBtn.style.display = 'none';
-                submitBtn.style.display = 'none';
+                quantitySection.classList.add('hidden');
+                priceSection.classList.add('hidden');
+                calculateBtn.classList.add('hidden');
+                submitBtn.classList.add('hidden');
             }
         });
 
@@ -95,7 +354,7 @@
 
             if (quantity > 0) {
                 const totalPrice = pricePerItem * quantity;
-                totalPriceElement.textContent = `Ksh. ${totalPrice}`;
+                totalPriceElement.textContent = `KSh ${totalPrice}`;
             } else {
                 alert('Please enter a valid quantity.');
             }
@@ -108,12 +367,26 @@
             const totalPrice = totalPriceElement.textContent;
 
             if (selectedService && quantity > 0) {
-                alert(`Service: ${selectedService}\nQuantity: ${quantity}\nTotal Price: ${totalPrice}`);
-                // Add AJAX or form submission logic here
+                // Show confirmation modal or redirect to booking
+                if (confirm(`Confirm booking:\nService: ${selectedService}\nQuantity: ${quantity}\nTotal: ${totalPrice}\n\nProceed to book?`)) {
+                    // Here you would typically send data to your backend
+                    alert('Booking submitted successfully! You will be contacted shortly.');
+                }
             } else {
                 alert('Please complete the form correctly.');
             }
         });
+
+        function selectService(serviceName) {
+            serviceDropdown.value = serviceName;
+            serviceDropdown.dispatchEvent(new Event('change'));
+            
+            // Scroll to calculator
+            document.getElementById('services-form').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -5,25 +5,394 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Fua Hub</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Fua Hub</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="account.html">Account</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="services.html">Services</a>
-            <a href="signup.html">Sign Up</a>
-        </nav>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home"></i> Fua Hub
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                    <li><a href="account.html" class="nav-link">Account</a></li>
+                    <li><a href="login.html" class="btn btn-outline btn-sm">Login</a></li>
+                    <li><a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a></li>
+                </ul>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <h2>Contact Us</h2>
-        <p>Do you have an emergency? Call us now on <strong>+254704566421</strong>.</p>
-    </main>
+    <!-- Hero Section -->
+    <section style="background: var(--gradient-primary); color: white; padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <h1 style="color: white; margin-bottom: 1rem;">Get in Touch</h1>
+            <p style="color: white; opacity: 0.9; font-size: 1.25rem;">
+                Have questions? Need help? We're here for you 24/7.
+            </p>
+        </div>
+    </section>
 
- 
+    <!-- Contact Methods -->
+    <section class="container mt-4">
+        <div class="row">
+            <div class="col-4">
+                <div class="card text-center">
+                    <div class="service-icon" style="background: var(--success-color);">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Emergency Hotline</h3>
+                        <p>Call us now for urgent assistance</p>
+                        <div class="service-price" style="color: var(--success-color);">+254 704 566 421</div>
+                        <a href="tel:+254704566421" class="btn btn-primary">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card text-center">
+                    <div class="service-icon" style="background: var(--accent-color);">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Email Support</h3>
+                        <p>Send us a message and we'll respond quickly</p>
+                        <div class="service-price" style="color: var(--accent-color);">info@fuahub.com</div>
+                        <a href="mailto:info@fuahub.com" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i> Send Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card text-center">
+                    <div class="service-icon" style="background: var(--warning-color);">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Live Chat</h3>
+                        <p>Chat with our support team in real-time</p>
+                        <div class="service-price" style="color: var(--warning-color);">Available 24/7</div>
+                        <button class="btn btn-primary" onclick="startLiveChat()">
+                            <i class="fas fa-comments"></i> Start Chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="container mt-4">
+        <div class="row">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Send Us a Message</h2>
+                        <p class="card-subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
+                    </div>
+                    
+                    <div class="card-body">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" id="firstName" name="firstName" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" id="lastName" name="lastName" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" id="email" name="email" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select id="subject" name="subject" class="form-control form-select" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="service">Service Question</option>
+                                    <option value="booking">Booking Issue</option>
+                                    <option value="provider">Become a Provider</option>
+                                    <option value="complaint">Complaint</option>
+                                    <option value="technical">Technical Support</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-control form-textarea" 
+                                          placeholder="Tell us how we can help you..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" required style="margin-right: 0.5rem;">
+                                    <span>I agree to receive email updates about my inquiry</span>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <!-- FAQ Section -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Quick Answers</h3>
+                        <p class="card-subtitle">Frequently Asked Questions</p>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="faq-item" style="margin-bottom: 1.5rem;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">
+                                <i class="fas fa-question-circle"></i> How do I book a service?
+                            </h4>
+                            <p style="font-size: 0.875rem;">Simply visit our Services page, select the service you need, calculate the price, and submit your booking.</p>
+                        </div>
+                        
+                        <div class="faq-item" style="margin-bottom: 1.5rem;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">
+                                <i class="fas fa-question-circle"></i> Are your providers verified?
+                            </h4>
+                            <p style="font-size: 0.875rem;">Yes, all our service providers go through a thorough verification process including background checks.</p>
+                        </div>
+                        
+                        <div class="faq-item" style="margin-bottom: 1.5rem;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">
+                                <i class="fas fa-question-circle"></i> What areas do you serve?
+                            </h4>
+                            <p style="font-size: 0.875rem;">We currently serve Nairobi and surrounding areas, with plans to expand to other cities soon.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">
+                                <i class="fas fa-question-circle"></i> How do I become a provider?
+                            </h4>
+                            <p style="font-size: 0.875rem;">Sign up as a service provider during registration and complete the verification process.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Office Hours -->
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h3 class="card-title">Office Hours</h3>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>Monday - Friday:</span>
+                            <span style="font-weight: 500;">8:00 AM - 8:00 PM</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>Saturday:</span>
+                            <span style="font-weight: 500;">9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>Sunday:</span>
+                            <span style="font-weight: 500;">10:00 AM - 4:00 PM</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--primary-color); font-weight: 500;">
+                            <span>Emergency Line:</span>
+                            <span>24/7 Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section style="background: var(--light-gray); padding: 3rem 0; margin-top: 3rem;">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Visit Our Office</h2>
+                <p>Come and meet our team in person</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+                                <i class="fas fa-map-marker-alt"></i> Main Office
+                            </h3>
+                            <p><strong>Address:</strong><br>
+                            123 Innovation Street<br>
+                            Westlands, Nairobi<br>
+                            Kenya</p>
+                            
+                            <p><strong>Postal Address:</strong><br>
+                            P.O. Box 12345-00100<br>
+                            Nairobi, Kenya</p>
+                            
+                            <div class="mt-3">
+                                <a href="#" class="btn btn-outline">
+                                    <i class="fas fa-directions"></i> Get Directions
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <!-- Placeholder for map -->
+                    <div style="background: var(--gray); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-map" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <h4>Interactive Map</h4>
+                            <p>Map integration coming soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-home"></i> Fua Hub</h3>
+                    <p>Your trusted partner for professional housework services. We connect you with verified service providers in your area.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="services.html">Our Services</a></p>
+                    <p><a href="contact.html">Contact Us</a></p>
+                    <p><a href="account.html">My Account</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="services.html">Laundry & Ironing</a></p>
+                    <p><a href="services.html">House Cleaning</a></p>
+                    <p><a href="services.html">Cooking</a></p>
+                    <p><a href="services.html">Dishwashing</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +254 704 566 421</p>
+                    <p><i class="fas fa-envelope"></i> info@fuahub.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fua Hub. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    // Show success message
+                    showMessage('Thank you for your message! We\'ll get back to you within 24 hours.', 'success');
+                    
+                    // Reset form
+                    this.reset();
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+        });
+        
+        function startLiveChat() {
+            // Placeholder for live chat functionality
+            showMessage('Live chat feature coming soon! Please call us or send an email for immediate assistance.', 'info');
+        }
+        
+        function showMessage(message, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'error' ? 'var(--danger-color)' : type === 'success' ? 'var(--success-color)' : 'var(--accent-color)'};
+                color: white;
+                padding: 1rem;
+                border-radius: var(--radius-md);
+                box-shadow: var(--shadow-lg);
+                z-index: 3000;
+                max-width: 300px;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            `;
+            messageDiv.textContent = message;
+            
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                messageDiv.style.transform = 'translateX(100%)';
+                setTimeout(() => messageDiv.remove(), 300);
+            }, 5000);
+        }
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>

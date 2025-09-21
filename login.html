@@ -4,73 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Fua Hub</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<style>
-    body{
-background-image: url(1.jfif) ;    
-width: 20%;
-background-color: burlywood;
-font-family: 'Times New Roman', Times, serif;
-}
-h2{
-text-align: center;
-padding-top: 12px;
-}
-form{
-width: 250px;
-margin-left: 15px;
-}
-form label{
-display: flex;
-margin-top: 15px;
-font-size: 18px;
-}
-form input{
-width: 80%;
-padding: 5px;
-border: none;
-border: 2px solid gray;
-border-radius: 5px;
-outline: none;
-}
-input[type=button]{
-width: 320px;
-height: 30px;
-margin-top: 15px;
-border: none;
-background-color:orange;
-color: white;
-font-size: 15px;
-}
-p{
-text-align: center;
-padding-top: 15px;
-font-size: 10px;
-}
-.para-2{
-text-align: center;
-color: white;
-font-size: 10px;
-margin-top: -10px;
-}
-.para-2 a{
-color: lavender;
-}
-</style>
 <body>
-    <main>
-        <h2>Login</h2>
-        <form action="login.php" method="POST">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home"></i> Fua Hub
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="account.html" class="nav-link">Account</a></li>
+                    <li><a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a></li>
+                </ul>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <section style="background: var(--light-gray); padding: 3rem 0; min-height: calc(100vh - 100px);">
+        <div class="container">
+            <div class="row" style="justify-content: center; align-items: center;">
+                <div class="col-6" style="max-width: 450px;">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h2 class="card-title">
+                                <i class="fas fa-sign-in-alt"></i> Welcome Back
+                            </h2>
+                            <p class="card-subtitle">Sign in to your Fua Hub account</p>
+                        </div>
+                        
+                        <div class="card-body">
+                            <form action="login.php" method="POST" id="loginForm">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">
+                                        <i class="fas fa-envelope"></i> Email Address
+                                    </label>
+                                    <input type="email" id="email" name="email" class="form-control" 
+                                           placeholder="Enter your email address" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password" class="form-label">
+                                        <i class="fas fa-lock"></i> Password
+                                    </label>
+                                    <div style="position: relative;">
+                                        <input type="password" id="password" name="password" class="form-control" 
+                                               placeholder="Enter your password" required>
+                                        <button type="button" id="togglePassword" 
+                                                style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--gray); cursor: pointer;">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <label style="display: flex; align-items: center; cursor: pointer;">
+                                        <input type="checkbox" name="remember" style="margin-right: 0.5rem;">
+                                        <span>Remember me</span>
+                                    </label>
+                                    <a href="#" style="color: var(--primary-color); font-size: 0.875rem;">Forgot password?</a>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" id="loginBtn">
+                                    <i class="fas fa-sign-in-alt"></i> Login
+                                </button>
+                            </form>
+
+                            <!-- Social Login Options -->
+                            <div style="margin: 2rem 0; text-align: center;">
+                                <div style="position: relative;">
+                                    <hr style="border: none; height: 1px; background: var(--light-gray); margin: 1rem 0;">
+                                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 0 1rem; color: var(--gray); font-size: 0.875rem;">or</span>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 1rem;">
+                                <button class="btn btn-outline" style="flex: 1;">
+                                    <i class="fab fa-google"></i> Google
+                                </button>
+                                <button class="btn btn-outline" style="flex: 1;">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer text-center">
+                            <p>Don't have an account? <a href="signup.html" style="color: var(--primary-color); font-weight: 500;">Sign up here</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Welcome Message Side -->
+                <div class="col-6" style="padding-left: 3rem;">
+                    <div style="text-align: center;">
+                        <div style="background: var(--gradient-primary); width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i class="fas fa-home" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <h2 style="color: var(--secondary-color); margin-bottom: 1rem;">Welcome to Fua Hub</h2>
+                        <p style="color: var(--gray); font-size: 1.125rem; line-height: 1.6;">
+                            Your trusted platform for connecting with professional household service providers. 
+                            Get quality services delivered right to your doorstep.
+                        </p>
+                        
+                        <div style="margin-top: 2rem;">
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <div style="background: rgba(255, 107, 53, 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                    <i class="fas fa-shield-alt" style="color: var(--primary-color);"></i>
+                                </div>
+                                <span style="color: var(--dark-gray);">Trusted & Verified Providers</span>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <div style="background: rgba(255, 107, 53, 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                    <i class="fas fa-clock" style="color: var(--primary-color);"></i>
+                                </div>
+                                <span style="color: var(--dark-gray);">Quick & Convenient Booking</span>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center;">
+                                <div style="background: rgba(255, 107, 53, 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                    <i class="fas fa-star" style="color: var(--primary-color);"></i>
+                                </div>
+                                <span style="color: var(--dark-gray);">Quality Service Guaranteed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Error/Success Messages -->
+    <div id="message" style="display: none;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('loginForm');
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            const emailInput = document.getElementById('email');
+
+            // Password toggle
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fa-eye');
+                icon.classList.toggle('fa-eye-slash');
+            });
+
+            // Form validation
+            form.addEventListener('submit', function(e) {
+                const email = emailInput.value.trim();
+                const password = passwordInput.value;
+
+                if (!email || !password) {
+                    e.preventDefault();
+                    showMessage('Please fill in all fields.', 'error');
+                    return;
+                }
+
+                if (!isValidEmail(email)) {
+                    e.preventDefault();
+                    showMessage('Please enter a valid email address.', 'error');
+                    return;
+                }
+
+                // Show loading state
+                const loginBtn = document.getElementById('loginBtn');
+                loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+                loginBtn.disabled = true;
+            });
+
+            // Check for URL parameters or error messages
+            const urlParams = new URLSearchParams(window.location.search);
+            const error = urlParams.get('error');
             
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            
-            <button type="submit">Login</button>
-        </form>
-        <p>Don't have an account? <a href="signup.html">Sign up here</a>.</p>
-    </main>
+            if (error === 'invalid_credentials') {
+                showMessage('Invalid email or password. Please try again.', 'error');
+            } else if (error === 'user_not_found') {
+                showMessage('No account found with this email address.', 'error');
+            } else if (error === 'account_disabled') {
+                showMessage('Your account has been disabled. Please contact support.', 'error');
+            }
+
+            // Focus on first input
+            emailInput.focus();
+        });
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = `<div class="alert alert-${type}" style="
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'error' ? 'var(--danger-color)' : 'var(--success-color)'};
+                color: white;
+                padding: 1rem;
+                border-radius: var(--radius-md);
+                box-shadow: var(--shadow-lg);
+                z-index: 3000;
+                max-width: 300px;
+            ">${message}</div>`;
+            messageDiv.style.display = 'block';
+
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        // Social login handlers (placeholder)
+        document.querySelectorAll('.btn-outline').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const provider = this.textContent.trim();
+                showMessage(`${provider} login coming soon!`, 'info');
+            });
+        });
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
