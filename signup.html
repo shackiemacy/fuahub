@@ -257,12 +257,26 @@
             const success = urlParams.get('success');
             const error = urlParams.get('error');
 
-            if (success) {
-                showMessage('Successfully signed up!', 'success');
+            if (success === 'registration') {
+                showMessage('Successfully signed up! Welcome to Fua Hub!', 'success');
             } else if (error === 'email_exists') {
                 showMessage('Email already exists. Please use a different email.', 'error');
             } else if (error === 'database_error') {
                 showMessage('An error occurred. Please try again later.', 'error');
+            } else if (error === 'missing_fields') {
+                showMessage('Please fill in all required fields.', 'error');
+            } else if (error === 'empty_fields') {
+                showMessage('All fields are required. Please try again.', 'error');
+            } else if (error === 'invalid_email') {
+                showMessage('Please enter a valid email address.', 'error');
+            } else if (error === 'weak_password') {
+                showMessage('Password must be at least 8 characters long.', 'error');
+            } else if (error === 'password_mismatch') {
+                showMessage('Passwords do not match. Please try again.', 'error');
+            } else if (error === 'invalid_role') {
+                showMessage('Please select a valid role.', 'error');
+            } else if (error === 'invalid_method') {
+                showMessage('Invalid request method. Please try again.', 'error');
             }
 
             // Auto-select role from URL parameter
