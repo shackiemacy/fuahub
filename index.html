@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fua Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    }
+
+header {
+    background-color: orange;
+    color: black;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+nav ul li a {
+    color: floralwhite;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #111;
+}
+
+.user-profile {
+    text-align: right;
+    justify-content: space-between;
+    display: inline-flex;
+}
+
+main {
+    background-image: url(iron.webp) ;
+    padding: 150px;
+}
+</style>
+    </style>
+<body>
+    <header>
+        <h1>Fua Hub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="account.html">Account</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="services.html">Services</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Welcome to Fua Hub</h2>
+            <p>Say goodbye to laundry stress with Fua Hub! We bring eco-friendly, professional laundry services right to your doorstep.</p>
+            <ul>
+                <li>Good services</li>
+                <li>Eco-Friendly Solutions</li>
+                <li>Affordable & Reliable Service</li>
+            </ul>
+            <p>Ready for hassle-free laundry? Choose us today!</p>
+        </section>
+    </main>
+
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Sign Up</h3>
+            <p>Are you signing up as:</p>
+            <button id="clientBtn">Client</button>
+            <button id="providerBtn">Service Provider</button>
+            <form id="signupForm">
+                <label>Email:</label>
+                <input type="email" required>
+                <label>Username:</label>
+                <input type="text" required>
+                <label>Password:</label>
+                <input type="password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Login</h3>
+            <form id="loginForm">
+                <label>Email:</label>
+                <input type="email" required>
+                <label>Password:</label>
+                <input type="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

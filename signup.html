@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+</head>
+<style>
+    body{
+background-image: url(1.jfif) ;    
+width: 20%;
+background-color: burlywood;
+font-family: 'Times New Roman', Times, serif;
+}
+h2{
+text-align: center;
+padding-top: 12px;
+}
+form{
+width: 250px;
+margin-left: 15px;
+}
+form label{
+display: flex;
+margin-top: 15px;
+font-size: 18px;
+}
+form input{
+width: 80%;
+padding: 5px;
+border: none;
+border: 2px solid gray;
+border-radius: 5px;
+outline: none;
+}
+input[type=button]{
+width: 320px;
+height: 30px;
+margin-top: 15px;
+border: none;
+background-color: burlywood;
+color: white;
+font-size: 15px;
+}
+p{
+text-align: center;
+padding-top: 15px;
+font-size: 10px;
+}
+.para-2{
+text-align: center;
+color: white;
+font-size: 10px;
+margin-top: -10px;
+}
+.para-2 a{
+color: lavender;
+}
+</style>
+<body>
+    <h1>Sign Up</h1>
+    <form action="register.php" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <select name="role">
+            <option value="client">Client</option>
+            <option value="service_provider">Service Provider</option>
+        </select>
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- Success or Error Messages -->
+    <div id="message"></div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const success = urlParams.get('success');
+        const error = urlParams.get('error');
+
+        const messageDiv = document.getElementById('message');
+
+        if (success) {
+            messageDiv.innerHTML = '<p class="success">Successfully signed up!</p>';
+        } else if (error === 'email_exists') {
+            messageDiv.innerHTML = '<p class="error">Email already exists. Please use a different email.</p>';
+        } else if (error === 'database_error') {
+            messageDiv.innerHTML = '<p class="error">An error occurred. Please try again later.</p>';
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Service - Fua Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Request a Service</h1>
+    </header>
+
+    <section class="service-selection">
+        <h2>Select a Service</h2>
+        <form action="submit-request.php" method="POST">
+            <label for="service-type">Choose a Service:</label>
+            <select id="service-type" name="service-type" required>
+                <option value="vacuum-cleaning">Vacuum Cleaning</option>
+                <option value="ironing">Ironing</option>
+                <option value="washing-clothes">Washing Clothes</option>
+                <option value="washing-dishes">Washing Dishes</option>
+                <option value="mopping">Mopping</option>
+                <option value="cooking">Cooking</option>
+            </select>
+
+            <label for="details">Service Details (e.g., size, quantity):</label>
+            <textarea id="details" name="details" placeholder="Enter any details about your service request..."></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </section>
+
+   
+</body>
+</html>

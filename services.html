@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Fua Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Services Offered</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="services-section">
+        <h2>Select and Calculate Services</h2>
+
+        <form id="services-form">
+            <label for="service">Choose a Service:</label>
+            <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="vacuum-cleaning">Vacuum Cleaning</option>
+                <option value="ironing">Ironing</option>
+                <option value="washing-clothes">Washing Clothes</option>
+                <option value="washing-dishes">Washing Dishes</option>
+                <option value="mopping">Mopping</option>
+                <option value="cooking">Cooking</option>
+            </select>
+
+            <div id="quantity-section" style="display: none;">
+                <label for="quantity">Enter Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" placeholder="Quantity" required>
+            </div>
+
+            <div id="price-section" style="display: none;">
+                <p>Price Per Item: <span id="price-per-item">Ksh. 0</span></p>
+                <p>Total Price: <span id="total-price">Ksh. 0</span></p>
+            </div>
+
+            <button type="button" id="calculate-btn" style="display: none;">Calculate</button>
+            <button type="submit" id="submit-btn" style="display: none;">Submit</button>
+        </form>
+    </section>
+
+    <script>
+        // Service prices
+        const prices = {
+            "vacuum-cleaning": 200, // Base price for single room
+            "ironing": 10,         // Per item
+            "washing-clothes": 500, // Per laundry basket (handwash)
+            "washing-dishes": 250, // Per session
+            "mopping": 70,         // Single room
+            "cooking": 350         // Per session
+        };
+
+        const serviceDropdown = document.getElementById('service');
+        const quantitySection = document.getElementById('quantity-section');
+        const priceSection = document.getElementById('price-section');
+        const pricePerItemElement = document.getElementById('price-per-item');
+        const totalPriceElement = document.getElementById('total-price');
+        const calculateBtn = document.getElementById('calculate-btn');
+        const submitBtn = document.getElementById('submit-btn');
+
+        serviceDropdown.addEventListener('change', function () {
+            const selectedService = serviceDropdown.value;
+
+            if (selectedService) {
+                quantitySection.style.display = 'block';
+                priceSection.style.display = 'block';
+                calculateBtn.style.display = 'inline-block';
+                submitBtn.style.display = 'inline-block';
+                pricePerItemElement.textContent = `Ksh. ${prices[selectedService]}`;
+            } else {
+                quantitySection.style.display = 'none';
+                priceSection.style.display = 'none';
+                calculateBtn.style.display = 'none';
+                submitBtn.style.display = 'none';
+            }
+        });
+
+        calculateBtn.addEventListener('click', function () {
+            const selectedService = serviceDropdown.value;
+            const quantity = parseInt(document.getElementById('quantity').value, 10);
+            const pricePerItem = prices[selectedService];
+
+            if (quantity > 0) {
+                const totalPrice = pricePerItem * quantity;
+                totalPriceElement.textContent = `Ksh. ${totalPrice}`;
+            } else {
+                alert('Please enter a valid quantity.');
+            }
+        });
+
+        document.getElementById('services-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const selectedService = serviceDropdown.value;
+            const quantity = document.getElementById('quantity').value;
+            const totalPrice = totalPriceElement.textContent;
+
+            if (selectedService && quantity > 0) {
+                alert(`Service: ${selectedService}\nQuantity: ${quantity}\nTotal Price: ${totalPrice}`);
+                // Add AJAX or form submission logic here
+            } else {
+                alert('Please complete the form correctly.');
+            }
+        });
+    </script>
+</body>
+</html>

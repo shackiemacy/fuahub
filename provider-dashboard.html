@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Provider Dashboard - Fua Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Service Provider Dashboard</h1>
+    </header>
+
+    <section class="service-listing">
+        <h2>Your Offered Services</h2>
+        <form action="update-services.php" method="POST">
+            <label for="vacuum-cleaning-price">Vacuum Cleaning:</label>
+            <input type="number" name="vacuum-cleaning-price" placeholder="Price" required>
+            <label for="vacuum-cleaning-status">Available?</label>
+            <select name="vacuum-cleaning-status">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <!-- Repeat for other services (Ironing, Washing, etc.) -->
+
+            <button type="submit">Update Services</button>
+        </form>
+    </section>
+
+    
+</body>
+</html>

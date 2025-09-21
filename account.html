@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Status - Fua Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .status {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    .buttons button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007BFF;
+        color: white;
+    }
+
+    .buttons button:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <h1>Welcome to Your Account</h1>
+
+    <div class="status">
+        Account Status: <strong id="account-status">Loading...</strong>
+    </div>
+
+    <div class="buttons">
+        <button onclick="location.href='services.html'">Request a Service</button>
+        <button onclick="location.href='offer-service.html'">Offer a Service</button>
+    </div>
+
+    <script>
+        // Simulate fetching account status from server
+        fetch('account_status.php')
+            .then(response => response.json())
+            .then(data => {
+                const statusElement = document.getElementById('account-status');
+                statusElement.textContent = data.status === 'active' ? 'Active' : 'Inactive';
+                statusElement.style.color = data.status === 'active' ? 'green' : 'red';
+            })
+            .catch(error => {
+                console.error('Error fetching account status:', error);
+            });
+    </script>
+</body>
+</html>

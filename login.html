@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fua Hub</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
+</head>
+<style>
+    body{
+background-image: url(1.jfif) ;    
+width: 20%;
+background-color: burlywood;
+font-family: 'Times New Roman', Times, serif;
+}
+h2{
+text-align: center;
+padding-top: 12px;
+}
+form{
+width: 250px;
+margin-left: 15px;
+}
+form label{
+display: flex;
+margin-top: 15px;
+font-size: 18px;
+}
+form input{
+width: 80%;
+padding: 5px;
+border: none;
+border: 2px solid gray;
+border-radius: 5px;
+outline: none;
+}
+input[type=button]{
+width: 320px;
+height: 30px;
+margin-top: 15px;
+border: none;
+background-color:orange;
+color: white;
+font-size: 15px;
+}
+p{
+text-align: center;
+padding-top: 15px;
+font-size: 10px;
+}
+.para-2{
+text-align: center;
+color: white;
+font-size: 10px;
+margin-top: -10px;
+}
+.para-2 a{
+color: lavender;
+}
+</style>
+<body>
+    <main>
+        <h2>Login</h2>
+        <form action="login.php" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign up here</a>.</p>
+    </main>
+</body>
+</html>
